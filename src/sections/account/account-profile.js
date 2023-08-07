@@ -15,7 +15,7 @@ const user = {
   country: 'KENYA',
   jobTitle: 'Senior Developer',
   name: 'Test Account',
-  timezone: 'GTM+3'
+  timezone: 'GMT+3'
 };
 
 export const AccountProfile = () => (

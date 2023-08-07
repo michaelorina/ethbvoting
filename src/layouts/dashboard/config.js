@@ -17,7 +17,7 @@ import { SvgIcon } from '@mui/material';
 export const items = [
   {
     title: 'Vote',
-    path: '/customers',
+    path: '/',
     icon: (
       <SvgIcon fontSize="small">
         <HowToVoteIcon/>
@@ -26,7 +26,7 @@ export const items = [
   },
   {
     title: 'View Results',
-    path: '/',
+    path: '/overview',
     icon: (
       <SvgIcon fontSize="small">
         <PreviewIcon />
