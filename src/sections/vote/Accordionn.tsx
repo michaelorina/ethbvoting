@@ -22,14 +22,13 @@ export default function ControlledAccordions() {
           id="panel1bh-header"
         >
           <Typography sx={{ width: '33%', flexShrink: 0 }}>
-            General settings
+            AGENDA A
           </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography>
+          <Typography sx={{ color: 'text.secondary' }}>Audited Financial Statements</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
+            Audited Financial Statements including the Balance Sheet for the year ended 31st December 2022, together with the Directors and Auditors Reports thereon be and are hereby approved and adopted.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -39,16 +38,14 @@ export default function ControlledAccordions() {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Users</Typography>
+          <Typography sx={{ width: '33%', flexShrink: 0 }}>AGENDA B</Typography>
           <Typography sx={{ color: 'text.secondary' }}>
-            You are currently not an owner
+            Approve Director's Renumeration Report
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus,
-            varius pulvinar diam eros in elit. Pellentesque convallis laoreet
-            laoreet.
+            To approve the Directors’ Remuneration Report for the period ended 31st December 2022.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -59,31 +56,24 @@ export default function ControlledAccordions() {
           id="panel3bh-header"
         >
           <Typography sx={{ width: '33%', flexShrink: 0 }}>
-            Advanced settings
+            AGENDA C
           </Typography>
           <Typography sx={{ color: 'text.secondary' }}>
-            Filtering has been entirely disabled for whole web server
+            Elect Directors
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
+            <b> Mr. Michael Joseph</b> retires in accordance with Article 69 of the Company’s Articles of Association, and being eligible, offers himself for <b>re-election.</b>
           </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
-        >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Personal data</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
           <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-            amet egestas eros, vitae egestas augue. Duis vel est augue.
+            Mr. John Ngumi retires in accordance with Article 69 of the Company’s Articles of Association, and being eligible, offers himself for <b>re-election.</b>
+          </Typography>
+          <Typography>
+            Ms. Esther Koimett retires in accordance with Article 69 of the Company’s Articles of Association and being eligible, offers herself for <b>re-election.</b>
+          </Typography>
+          <Typography>
+            Mr. Angus John Clarke retires in accordance with Article 69 of the Company’s Articles of Association, and being eligible, offers himself for <b>re-election.</b>
           </Typography>
         </AccordionDetails>
       </Accordion>
