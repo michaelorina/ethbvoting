@@ -4,12 +4,13 @@
 
 :root {
   /* --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 195, 204, 197;
   --background-end-rgb: 255, 255, 255; */
 
-  height: 100%;
-  background-color: 	#000040;
-  color-scheme: dark;
+  /* height: 100%;
+  background-color: 	#212121;
+  color: #ffffff;
+  color-scheme: dark; */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,3 +30,14 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.card {
+  width: 190px;
+  height: 254px;
+  border-radius: 30px;
+  background: #212121;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25),
+              -15px -15px 30px rgb(60, 60, 60);
+ }
+ 
+ 

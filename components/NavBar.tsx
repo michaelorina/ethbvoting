@@ -1,15 +1,15 @@
 import React from "react";
 import {Image, Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
 
-export default function App() {
+export default function NavBar() {
   return (
     <Navbar>
-      <NavbarBrand>
+      {/* <NavbarBrand>
         <Image
             width={120}
             alt="logo"
             src="./logo.png"/>
-      </NavbarBrand>
+      </NavbarBrand> */}
       <NavbarContent className="sm:flex gap-4" justify="center">
         <NavbarItem>
           <Link color="foreground" href="#">
