@@ -10,7 +10,7 @@ import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { CustomersTable } from 'src/sections/customer/customers-table';
 import { CustomersSearch } from 'src/sections/customer/customers-search';
 import { applyPagination } from 'src/utils/apply-pagination';
-import ControlledAccordions from '../sections/vote/Accordionn';
+import ControlledAccordions from '../sections/vote/ControlledAccordions';
 
 const now = new Date();
 

@@ -18,6 +18,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/login.tsx", "src/pages/_app.js", "src/pages/auth/login.js", "src/contexts/auth-context.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/login.tsx", "src/pages/_app.js", "src/pages/auth/login.js", "src/contexts/auth-context.js", "src/sections/vote/BasicModal.tsx"],
   "exclude": ["node_modules"]
 }
