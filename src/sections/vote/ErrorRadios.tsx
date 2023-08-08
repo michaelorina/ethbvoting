@@ -27,11 +27,11 @@ export default function ErrorRadios() {
     if (value === 'best') {
       setHelperText('You voted 👍');
       setError(false);
-      setVote(1);
+      setVote(0);
     } else if (value === 'worst') {
       setHelperText('You voted 👎');
       setError(true);
-      setVote(1);
+      setVote(0);
     } else {
       setHelperText('Please select an option.');
       setError(true);
