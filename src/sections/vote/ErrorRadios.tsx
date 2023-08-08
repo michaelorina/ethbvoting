@@ -27,11 +27,11 @@ export default function ErrorRadios() {
     if (value === 'best') {
       setHelperText('You voted 👍');
       setError(false);
-      setVote(0);
+      setVote(1);
     } else if (value === 'worst') {
       setHelperText('You voted 👎');
       setError(true);
-      setVote(0);
+      setVote(1);
     } else {
       setHelperText('Please select an option.');
       setError(true);
@@ -52,7 +52,7 @@ export default function ErrorRadios() {
 if(vote === 1){
     return (
         <div>
-        <Button aria-describedby={id} variant="contained" onClick={handleClick}>
+        {/* <Button aria-describedby={id} variant="contained" onClick={handleClick}>
           Open Popover
         </Button>
         <Popover
@@ -66,7 +66,10 @@ if(vote === 1){
           }}
         >
           <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
-        </Popover>
+        </Popover> */}
+        <Typography>
+          {helperText}
+        </Typography>
       </div>
     );
 }else{

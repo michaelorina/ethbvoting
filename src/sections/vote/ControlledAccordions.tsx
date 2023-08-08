@@ -11,12 +11,10 @@ import Button from '@mui/material/Button';
 
 export default function ControlledAccordions() {
   const [expanded, setExpanded] = React.useState<string | false>(false);
-  const [vote, setVote] = React.useState(0);
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
-      setVote(0);
     };
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
 
@@ -30,27 +28,6 @@ export default function ControlledAccordions() {
   
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
-    if(vote === 1){
-      return (
-          <div>
-          <Button aria-describedby={id} variant="contained" onClick={handleClick}>
-            Open Popover
-          </Button>
-          <Popover
-            id={id}
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handleClose}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left',
-            }}
-          >
-            <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
-          </Popover>
-        </div>
-      );
-  }else{
   return (
     <div>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
@@ -65,7 +42,7 @@ export default function ControlledAccordions() {
           <Typography sx={{ color: 'text.secondary' }}>Audited Financial Statements</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ py: 2 }}>
             Audited Financial Statements including the Balance Sheet for the year ended 31st December 2022, together with the Directors and Auditors Reports thereon be and are hereby approved and adopted.
           </Typography>
           <CustomizedDialogs/>
@@ -83,9 +60,10 @@ export default function ControlledAccordions() {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ py: 2 }}>
             To approve the Directors’ Remuneration Report for the period ended 31st December 2022.
           </Typography>
+          <CustomizedDialogs/>
         </AccordionDetails>
       </Accordion>
       <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
@@ -102,21 +80,25 @@ export default function ControlledAccordions() {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ py: 2 }}>
             <b> Mr. Michael Joseph</b> retires in accordance with Article 69 of the Company’s Articles of Association, and being eligible, offers himself for <b>re-election.</b>
           </Typography>
-          <Typography>
+          <CustomizedDialogs/>
+          <Typography sx={{ py: 2 }}>
             <b>Mr. John Ngumi</b> retires in accordance with Article 69 of the Company’s Articles of Association, and being eligible, offers himself for <b>re-election.</b>
           </Typography>
-          <Typography>
+          <CustomizedDialogs/>
+          <Typography sx={{ py: 2 }}>
             <b>Ms. Esther Koimett</b> retires in accordance with Article 69 of the Company’s Articles of Association and being eligible, offers herself for <b>re-election.</b>
           </Typography>
-          <Typography>
+          <CustomizedDialogs/>
+          <Typography sx={{ py: 2 }}>
             <b>Mr. Angus John Clarke</b> retires in accordance with Article 69 of the Company’s Articles of Association, and being eligible, offers himself for <b>re-election.</b>
           </Typography>
+          <CustomizedDialogs/>
         </AccordionDetails>
       </Accordion>
     </div>
   );
-  }
+  
 }

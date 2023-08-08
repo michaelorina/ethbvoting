@@ -9,6 +9,9 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import ErrorRadios from './ErrorRadios';
+import PlusIcon from '@heroicons/react/24/solid/PlusIcon';
+import {SvgIcon} from '@mui/material';
+import DoneAllIcon from '@mui/icons-material/DoneAll';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -51,17 +54,35 @@ function BootstrapDialogTitle(props: DialogTitleProps) {
 
 export default function CustomizedDialogs() {
   const [open, setOpen] = React.useState(false);
+  const [vote, setVote] = React.useState(0);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
+    setVote(1); 
   };
 
+  if (vote == 1){
+    return(
+      <Button
+      startIcon={(
+        <SvgIcon fontSize="small">
+          <DoneAllIcon/>
+        </SvgIcon>
+      )}
+      variant="contained"
+      color="success"
+    >
+      Already Voted!
+    </Button>
+    );
+  }
+else {
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="contained" onClick={handleClickOpen}>
         Vote
       </Button>
       <BootstrapDialog
@@ -70,7 +91,7 @@ export default function CustomizedDialogs() {
         open={open}
       >
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Select your Choice
+          Vote Here
         </BootstrapDialogTitle>
         <DialogContent dividers>
             <ErrorRadios/>
@@ -83,4 +104,5 @@ export default function CustomizedDialogs() {
       </BootstrapDialog>
     </div>
   );
+}
 }
