@@ -3,6 +3,7 @@ import ArrowDownIcon from '@heroicons/react/24/solid/ArrowDownIcon';
 import ArrowUpIcon from '@heroicons/react/24/solid/ArrowUpIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 
 export const OverviewTotalCustomers = (props) => {
   const { difference, positive = false, sx, value } = props;
@@ -21,7 +22,7 @@ export const OverviewTotalCustomers = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Total Customers
+              Decline
             </Typography>
             <Typography variant="h4">
               {value}
@@ -29,13 +30,13 @@ export const OverviewTotalCustomers = (props) => {
           </Stack>
           <Avatar
             sx={{
-              backgroundColor: 'success.main',
+              backgroundColor: 'error.main',
               height: 56,
               width: 56
             }}
           >
             <SvgIcon>
-              <UsersIcon />
+              <ThumbDownIcon/>
             </SvgIcon>
           </Avatar>
         </Stack>
@@ -68,7 +69,7 @@ export const OverviewTotalCustomers = (props) => {
               color="text.secondary"
               variant="caption"
             >
-              Since last month
+              disagree with the motion
             </Typography>
           </Stack>
         )}

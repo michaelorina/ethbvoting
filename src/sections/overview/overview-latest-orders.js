@@ -17,29 +17,31 @@ import {
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
 import { SeverityPill } from 'src/components/severity-pill';
+import PrintIcon from '@mui/icons-material/Print';
 
 const statusMap = {
-  pending: 'warning',
-  delivered: 'success',
-  refunded: 'error'
+  not_voted: 'warning',
+  voted: 'success',
+  error: 'error'
 };
+
 
 export const OverviewLatestOrders = (props) => {
   const { orders = [], sx } = props;
 
   return (
     <Card sx={sx}>
-      <CardHeader title="Latest Orders" />
+      <CardHeader title="Voter List" />
       <Scrollbar sx={{ flexGrow: 1 }}>
         <Box sx={{ minWidth: 800 }}>
           <Table>
             <TableHead>
               <TableRow>
                 <TableCell>
-                  Order
+                  Username
                 </TableCell>
                 <TableCell>
-                  Customer
+                  Email
                 </TableCell>
                 <TableCell sortDirection="desc">
                   Date
@@ -85,13 +87,14 @@ export const OverviewLatestOrders = (props) => {
           color="inherit"
           endIcon={(
             <SvgIcon fontSize="small">
-              <ArrowRightIcon />
+              <PrintIcon/>
             </SvgIcon>
           )}
           size="small"
           variant="text"
+         
         >
-          View all
+          Print
         </Button>
       </CardActions>
     </Card>

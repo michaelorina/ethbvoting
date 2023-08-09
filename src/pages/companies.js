@@ -1,152 +1,121 @@
 import Head from 'next/head';
-import ArrowUpOnSquareIcon from '@heroicons/react/24/solid/ArrowUpOnSquareIcon';
-import ArrowDownOnSquareIcon from '@heroicons/react/24/solid/ArrowDownOnSquareIcon';
-import PlusIcon from '@heroicons/react/24/solid/PlusIcon';
-import {
-  Box,
-  Button,
-  Container,
-  Pagination,
-  Stack,
-  SvgIcon,
-  Typography,
-  Unstable_Grid2 as Grid
-} from '@mui/material';
-import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import { CompanyCard } from 'src/sections/companies/company-card';
-import { CompaniesSearch } from 'src/sections/companies/companies-search';
+import { OverviewLatestOrders } from 'src/sections/overview/overview-latest-orders';
+import { OverviewSales } from 'src/sections/overview/overview-sales';
+import { OverviewTraffic } from 'src/sections/overview/overview-traffic';
 
-const companies = [
-  {
-    id: '2569ce0d517a7f06d3ea1f24',
-    createdAt: '27/03/2019',
-    description: 'Dropbox is a file hosting service that offers cloud storage, file synchronization, a personal cloud.',
-    logo: '/assets/logos/logo-dropbox.png',
-    title: 'Dropbox',
-    downloads: '594'
-  },
-  {
-    id: 'ed2b900870ceba72d203ec15',
-    createdAt: '31/03/2019',
-    description: 'Medium is an online publishing platform developed by Evan Williams, and launched in August 2012.',
-    logo: '/assets/logos/logo-medium.png',
-    title: 'Medium Corporation',
-    downloads: '625'
-  },
-  {
-    id: 'a033e38768c82fca90df3db7',
-    createdAt: '03/04/2019',
-    description: 'Slack is a cloud-based set of team collaboration tools and services, founded by Stewart Butterfield.',
-    logo: '/assets/logos/logo-slack.png',
-    title: 'Slack',
-    downloads: '857'
-  },
-  {
-    id: '1efecb2bf6a51def9869ab0f',
-    createdAt: '04/04/2019',
-    description: 'Lyft is an on-demand transportation company based in San Francisco, California.',
-    logo: '/assets/logos/logo-lyft.png',
-    title: 'Lyft',
-    downloads: '406'
-  },
-  {
-    id: '1ed68149f65fbc6089b5fd07',
-    createdAt: '04/04/2019',
-    description: 'GitHub is a web-based hosting service for version control of code using Git.',
-    logo: '/assets/logos/logo-github.png',
-    title: 'GitHub',
-    downloads: '835'
-  },
-  {
-    id: '5dab321376eff6177407e887',
-    createdAt: '04/04/2019',
-    description: 'Squarespace provides software as a service for website building and hosting. Headquartered in NYC.',
-    logo: '/assets/logos/logo-squarespace.png',
-    title: 'Squarespace',
-    downloads: '835'
-  }
-];
+const now = new Date();
+
+import {Box, Container, Pagination, Unstable_Grid2 as Grid} from '@mui/material';
+import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
+
 
 const Page = () => (
   <>
     <Head>
       <title>
-        Companies | ethbvoting
+        Report | ethbvoting
       </title>
     </Head>
-    <Box
-      component="main"
-      sx={{
-        flexGrow: 1,
-        py: 8
-      }}
-    >
-      <Container maxWidth="xl">
-        <Stack spacing={3}>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            spacing={4}
+    <Container>
+    <Grid
+            xs={12}
+            lg={8}
           >
-            <Stack spacing={1}>
-              <Typography variant="h4">
-                Companies
-              </Typography>
-              <Stack
-                alignItems="center"
-                direction="row"
-                spacing={1}
-              >
-                <Button
-                  color="inherit"
-                  startIcon={(
-                    <SvgIcon fontSize="small">
-                      <ArrowUpOnSquareIcon />
-                    </SvgIcon>
-                  )}
-                >
-                  Import
-                </Button>
-                <Button
-                  color="inherit"
-                  startIcon={(
-                    <SvgIcon fontSize="small">
-                      <ArrowDownOnSquareIcon />
-                    </SvgIcon>
-                  )}
-                >
-                  Export
-                </Button>
-              </Stack>
-            </Stack>
-            <div>
-              <Button
-                startIcon={(
-                  <SvgIcon fontSize="small">
-                    <PlusIcon />
-                  </SvgIcon>
-                )}
-                variant="contained"
-              >
-                Add
-              </Button>
-            </div>
-          </Stack>
-          <CompaniesSearch />
+            <OverviewSales
+              chartSeries={[
+                {
+                  name: 'This year',
+                  data: [18, 16, 5, 8, 3, 14, 14, 16, 17, 19, 18, 20]
+                },
+                {
+                  name: 'Last year',
+                  data: [12, 11, 4, 6, 2, 9, 9, 10, 11, 12, 13, 13]
+                }
+              ]}
+              sx={{ height: '100%' }}
+            />
+          </Grid>
+    <Grid
+            xs={12}
+            md={6}
+            lg={4}
+          >
+            <OverviewTraffic
+              chartSeries={[63, 15, 22]}
+              labels={['Desktop', 'Tablet', 'Phone']}
+              sx={{ height: '100%' }}
+            />
+          </Grid>
           <Grid
-            container
-            spacing={3}
+            xs={12}
+            md={12}
+            lg={8}
           >
-            {companies.map((company) => (
-              <Grid
-                xs={12}
-                md={6}
-                lg={4}
-                key={company.id}
-              >
-                <CompanyCard company={company} />
-              </Grid>
-            ))}
+            <OverviewLatestOrders
+              orders={[
+                {
+                  id: 'f69f88012978187a6c12897f',
+                  ref: 'VOT001',
+                  amount: 30.5,
+                  customer: {
+                    name: 'test@ethbvoting.io'
+                  },
+                  createdAt: 1555016400000,
+                  status: 'voted'
+                },
+                {
+                  id: '9eaa1c7dd4433f413c308ce2',
+                  ref: 'VOT002',
+                  amount: 25.1,
+                  customer: {
+                    name: 'glow@gmail.com'
+                  },
+                  createdAt: 1555016400000,
+                  status: 'not_voted'
+                },
+                {
+                  id: '01a5230c811bd04996ce7c13',
+                  ref: 'VOT003',
+                  amount: 10.99,
+                  customer: {
+                    name: 'kembo@tukenya.io'
+                  },
+                  createdAt: 1554930000000,
+                  status: 'voted'
+                },
+                {
+                  id: '1f4e1bd0a87cea23cdb83d18',
+                  ref: 'VOT004',
+                  amount: 96.43,
+                  customer: {
+                    name: 'wangui@github.io'
+                  },
+                  createdAt: 1554757200000,
+                  status: 'voted'
+                },
+                {
+                  id: '9f974f239d29ede969367103',
+                  ref: 'VOT005',
+                  amount: 32.54,
+                  customer: {
+                    name: 'mesh@vercel.app'
+                  },
+                  createdAt: 1554670800000,
+                  status: 'error'
+                },
+                {
+                  id: 'ffc83c1560ec2f66a1c05596',
+                  ref: 'VOT006',
+                  amount: 16.76,
+                  customer: {
+                    name: 'orina@hacker.to'
+                  },
+                  createdAt: 1554670800000,
+                  status: 'voted'
+                }
+              ]}
+              sx={{ height: '100%' }}
+            />
           </Grid>
           <Box
             sx={{
@@ -159,9 +128,7 @@ const Page = () => (
               size="small"
             />
           </Box>
-        </Stack>
-      </Container>
-    </Box>
+    </Container>
   </>
 );
 

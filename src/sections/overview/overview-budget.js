@@ -3,6 +3,7 @@ import ArrowDownIcon from '@heroicons/react/24/solid/ArrowDownIcon';
 import ArrowUpIcon from '@heroicons/react/24/solid/ArrowUpIcon';
 import CurrencyDollarIcon from '@heroicons/react/24/solid/CurrencyDollarIcon';
 import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
+import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 
 export const OverviewBudget = (props) => {
   const { difference, positive = false, sx, value } = props;
@@ -21,7 +22,7 @@ export const OverviewBudget = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Budget
+              Agree
             </Typography>
             <Typography variant="h4">
               {value}
@@ -29,13 +30,13 @@ export const OverviewBudget = (props) => {
           </Stack>
           <Avatar
             sx={{
-              backgroundColor: 'error.main',
+              backgroundColor: 'success.main',
               height: 56,
               width: 56
             }}
           >
             <SvgIcon>
-              <CurrencyDollarIcon />
+              <ThumbUpAltIcon/>
             </SvgIcon>
           </Avatar>
         </Stack>
@@ -68,7 +69,7 @@ export const OverviewBudget = (props) => {
               color="text.secondary"
               variant="caption"
             >
-              Since last month
+              agree with the motion
             </Typography>
           </Stack>
         )}

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import CurrencyDollarIcon from '@heroicons/react/24/solid/CurrencyDollarIcon';
 import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 
 export const OverviewTotalProfit = (props) => {
   const { value, sx } = props;
@@ -19,7 +19,7 @@ export const OverviewTotalProfit = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Total Profit
+              Total Votes
             </Typography>
             <Typography variant="h4">
               {value}
@@ -33,7 +33,7 @@ export const OverviewTotalProfit = (props) => {
             }}
           >
             <SvgIcon>
-              <CurrencyDollarIcon />
+              <SentimentSatisfiedAltIcon/>
             </SvgIcon>
           </Avatar>
         </Stack>

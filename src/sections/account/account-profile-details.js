@@ -146,7 +146,7 @@ export const AccountProfileDetails = () => {
               >
                 <TextField
                   fullWidth
-                  label="Select State"
+                  label="Select City"
                   name="state"
                   onChange={handleChange}
                   required

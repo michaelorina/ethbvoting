@@ -29,7 +29,7 @@ export default function ControlledAccordions() {
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
   return (
-    <div>
+    <div className="py-2">
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
