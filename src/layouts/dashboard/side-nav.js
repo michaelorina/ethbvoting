@@ -1,7 +1,6 @@
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
-import ArrowTopRightOnSquareIcon from '@heroicons/react/24/solid/ArrowTopRightOnSquareIcon';
 import ChevronUpDownIcon from '@heroicons/react/24/solid/ChevronUpDownIcon';
 import {
   Box,
@@ -11,12 +10,17 @@ import {
   Stack,
   SvgIcon,
   Typography,
-  useMediaQuery
+  useMediaQuery,
+  Link
 } from '@mui/material';
 import { Logo } from 'src/components/logo';
 import { Scrollbar } from 'src/components/scrollbar';
 import { items } from './config';
 import { SideNavItem } from './side-nav-item';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 export const SideNav = (props) => {
   const { open, onClose } = props;
@@ -130,7 +134,7 @@ export const SideNav = (props) => {
             py: 3
           }}
         >
-          <Typography
+          {/* <Typography
             color="neutral.100"
             variant="subtitle2"
           >
@@ -141,7 +145,31 @@ export const SideNav = (props) => {
             variant="body2"
           >
             through blockchain-powered decentralized voting.
-          </Typography>
+          </Typography> */}
+          <Link
+            variant="body2"
+            href="https://github.com/michaelorina/ethbvoting"
+          >
+            <GitHubIcon/>
+          </Link>
+          <Link
+            variant="body2"
+            href="https://twitter.com/OrinahC"
+          >
+            <TwitterIcon/>
+          </Link>
+          <Link
+            variant="body2"
+            href="https://www.linkedin.com/in/michael-orina-aba567214/"
+          >
+            <LinkedInIcon/>
+          </Link>
+          <Link
+            variant="body2"
+            href="https://www.instagram.com/orinah_cybersec/"
+          >
+            <InstagramIcon/>
+          </Link>
         </Box>
       </Box>
     </Scrollbar>
